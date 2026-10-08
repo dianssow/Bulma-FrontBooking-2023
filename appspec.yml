@@ -5,9 +5,9 @@ file_exists_behavior: OVERWRITE
 
 files:
   - source: index.html
-    destination: /usr/share/nginx/html
+    destination: /var/www/html
   - source: ressources
-    destination: /usr/share/nginx/html/ressources
+    destination: /var/www/html/ressources
 
 hooks:
   ApplicationStop:
