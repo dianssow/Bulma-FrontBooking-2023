@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+
+file_exists_behavior: OVERWRITE
+
+files:
+  - source: index.html
+    destination: /usr/share/nginx/html
+  - source: ressources
+    destination: /usr/share/nginx/html/ressources
+
+hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 30
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 30
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 30
